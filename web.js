@@ -4,9 +4,9 @@ var fs = require('fs');
 var FILE_DEFAULT = "index.html";
 
 var message() = function (file) {
-file = 'index.html';
-var buffer = new buffer(fs.readFileSync(file));
-return (buffer.toString());
+file = file || FILE_DEFAULT;
+var buffer = fs.readFileSync(file);
+return (buffer.toString('utf-8'));
 }
 
 var app = express.createServer(express.logger());
